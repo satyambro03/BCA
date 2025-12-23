@@ -16,7 +16,7 @@ const HomePage: React.FC = () => {
 
         {/* Notes Section Card - Wrapped in Link */}
           <Link
-            href="https://www.bca-ycmou.com/notes.html"
+            href="https://satyambro03.github.io/BCA-YCMOU/notes.html"
             className="block group h-full" // Added h-full for consistent height
             target="_blank"
             rel="noopener noreferrer"
@@ -37,7 +37,7 @@ const HomePage: React.FC = () => {
 
         {/* Question Papers Archive Card - Wrapped in Link */}
           <Link
-            href="https://www.bca-ycmou.com/question_papers.html"
+            href="https://satyambro03.github.io/BCA-YCMOU/question_papers.html"
             className="block group h-full"
             target="_blank"
             rel="noopener noreferrer"
@@ -58,7 +58,7 @@ const HomePage: React.FC = () => {
 
         {/* Practicals Section Card - Wrapped in Link */}
            <Link
-            href="https://www.bca-ycmou.com/practicals.html"
+            href="https://satyambro03.github.io/BCA-YCMOU/practicals.html"
             className="block group h-full"
             target="_blank"
             rel="noopener noreferrer"
@@ -79,7 +79,7 @@ const HomePage: React.FC = () => {
 
         {/* E-Books Section Card - Wrapped in Link */}
            <Link
-            href="https://www.bca-ycmou.com/books.html"
+            href="https://satyambro03.github.io/BCA-YCMOU/books.html"
             className="block group h-full"
             target="_blank"
             rel="noopener noreferrer"
