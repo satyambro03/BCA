@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  :root {
+    /* Adjusted background to be slightly less white */
+    --background: 210 17% 96%; /* Was 210 17% 98% */
+    /* Reference: Dark Text (#212529) -> hsl(210, 10%, 15%) */
+    --foreground: 210 10% 15%;
+    /* Reference: White (#ffffff) -> hsl(0, 0%, 100%) */
+    --card: 0 0% 100%;
+    --card-foreground: 210 10% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 10% 15%;
+    /* Reference: Primary Blue (#007bff) -> hsl(211, 100%, 50%) */
+    --primary: 211 100% 50%;
+    /* Reference: White text on blue -> hsl(0, 0%, 100%) */
+    --primary-foreground: 0 0% 100%;
+    /* Slightly darker gray for secondary elements */
+    --secondary: 210 17% 95%;
+    --secondary-foreground: 210 10% 25%;
+    /* Reference: Muted Text (#6c757d) -> hsl(208, 7%, 46%) */
+    --muted: 210 17% 90%;
+    --muted-foreground: 208 7% 46%;
+    /* Accent matches primary blue */
+    --accent: 211 100% 50%;
+    --accent-foreground: 0 0% 100%;
+    /* Default destructive */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    /* Lighter border */
+    --border: 210 10% 85%;
+    --input: 210 10% 85%;
+    /* Ring matches primary */
+    --ring: 211 100% 50%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+    /* Sidebar colors adjusted to fit the theme */
+    --sidebar-background: 0 0% 100%; /* White sidebar */
+    --sidebar-foreground: 210 10% 15%;
+    --sidebar-primary: 211 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 17% 95%; /* Light gray accent */
+    --sidebar-accent-foreground: 210 10% 15%;
+    --sidebar-border: 210 10% 85%;
+    --sidebar-ring: 211 100% 50%;
+  }
+  .dark {
+    /* Dark equivalent of #212529 */
+    --background: 210 10% 15%;
+    /* Light gray text */
+    --foreground: 210 17% 98%;
+    /* Slightly lighter dark for cards */
+    --card: 210 10% 20%;
+    --card-foreground: 210 17% 98%;
+    --popover: 210 10% 20%;
+    --popover-foreground: 210 17% 98%;
+    /* Lighter blue for dark mode primary */
+    --primary: 211 100% 60%;
+    /* Revert primary-foreground to white for better contrast on the lighter blue background in dark mode */
+    --primary-foreground: 0 0% 100%; /* Was 210 10% 15% */
+    /* Dark secondary */
+    --secondary: 210 10% 25%;
+    --secondary-foreground: 210 17% 95%;
+    /* Dark muted */
+    --muted: 210 10% 30%;
+    --muted-foreground: 210 17% 70%;
+    /* Dark accent matches primary */
+    --accent: 211 100% 60%;
+    /* Use dark text on the light blue accent */
+    --accent-foreground: 210 10% 15%;
+    /* Default destructive */
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    /* Dark border */
+    --border: 210 10% 35%;
+    --input: 210 10% 35%;
+    /* Ring matches primary */
+    --ring: 211 100% 60%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    /* Dark Sidebar */
+    --sidebar-background: 210 10% 20%; /* Dark card color */
+    --sidebar-foreground: 210 17% 98%;
+    --sidebar-primary: 211 100% 60%;
+    --sidebar-primary-foreground: 210 10% 15%;
+    --sidebar-accent: 210 10% 25%; /* Dark secondary color */
+    --sidebar-accent-foreground: 210 17% 98%;
+    --sidebar-border: 210 10% 35%;
+    --sidebar-ring: 211 100% 60%;
+  }
+
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* Add background image - Updated to user-provided URL */
+    background-image: url('https://sdmntprnorthcentralus.oaiusercontent.com/files/00000000-4fec-622f-b48d-2735e393a9bb/raw?se=2025-04-28T19%3A25%3A32Z&sp=r&sv=2024-08-04&sr=b&scid=c221d6bf-126f-5b20-82ab-4a360e08c04d&skoid=a3336399-497e-45e5-8f28-4b88ecca3d1f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-28T12%3A54%3A36Z&ske=2025-04-29T12%3A54%3A36Z&sks=b&skv=2024-08-04&sig=e/NDjzqz63WpGqvCs%2Bv1hEHPiihKqY6D5xiV8KCbuxY%3D');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Keeps the background fixed during scroll */
+    /* Add subtle background transition */
+    @apply transition-colors duration-500;
+  }
+  /* Apply a semi-transparent background to the main content area for better readability */
+  main.content-area {
+     @apply bg-background/90 backdrop-blur-sm; /* Use theme background with opacity and add blur */
+     @apply rounded-lg shadow-lg; /* Optional: Add rounding and shadow */
+  }
+
+   /* Ensure footer also has a background for readability */
+  footer {
+     @apply bg-secondary/95 backdrop-blur-sm; /* Adjust opacity as needed */
+  }
+
+}
+
+/* Define the fadeInUp animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add subtle hover animation for cards */
+@layer utilities {
+  .card-hover-effect {
+    @apply transition-all duration-300 ease-in-out;
+    @apply hover:shadow-[0_0_15px_2px_hsla(var(--primary),0.5)] hover:border-primary;
+  }
+  /* Utility class to apply the animation */
+  .fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+}
